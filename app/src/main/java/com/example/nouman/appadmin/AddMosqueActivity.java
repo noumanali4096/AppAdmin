@@ -17,8 +17,9 @@ import java.util.List;
 public class AddMosqueActivity extends AppCompatActivity {
 
     Button add;
-    EditText et1,et2,et3,et4,et5;
+    EditText et1,et2,et3,et4;
     DatabaseReference databaseMoque;
+    DatabaseReference databaseMoquenTimming;
     DatabaseReference databaseMoqueAdmin;
     List<Mosque> mosqueList;
     @Override
@@ -28,10 +29,10 @@ public class AddMosqueActivity extends AppCompatActivity {
         et1=(EditText) findViewById(R.id.mosque_name_editText);
         et2=(EditText) findViewById(R.id.longitude_editText);
         et3=(EditText) findViewById(R.id.latitudes_editText);
-        et4=(EditText) findViewById(R.id.editText4);
-        et5=(EditText) findViewById(R.id.editText3);
+        et4=(EditText) findViewById(R.id.editText3);
         add=(Button) findViewById(R.id.add_button);
         databaseMoque = FirebaseDatabase.getInstance().getReferenceFromUrl("https://azzan-f7f08.firebaseio.com/mosque");
+        databaseMoquenTimming = FirebaseDatabase.getInstance().getReferenceFromUrl("https://azzan-f7f08.firebaseio.com/mosquentiming");
         databaseMoqueAdmin = FirebaseDatabase.getInstance().getReferenceFromUrl("https://azzan-f7f08.firebaseio.com/mosqueadmin");
         mosqueList=new ArrayList<>();
         add.setOnClickListener(new View.OnClickListener() {
@@ -41,7 +42,7 @@ public class AddMosqueActivity extends AppCompatActivity {
                 et1.setText("");
                 et2.setText("");
                 et3.setText("");
-                et5.setText("");
+                et4.setText("");
             }
         });
 
@@ -51,17 +52,21 @@ public class AddMosqueActivity extends AppCompatActivity {
         String name =  et1.getText().toString().trim();
         String s1 = et2.getText().toString();
         String s2 = et3.getText().toString();
-        String phone=et4.getText().toString()+et5.getText().toString().trim();
+        String phone=et4.getText().toString();
         double lang = Double.parseDouble(s1);
         double lat =  Double.parseDouble(s2);
 
         if(!TextUtils.isEmpty(name) && !TextUtils.isEmpty(s1) && !TextUtils.isEmpty(s2) &&
-                !TextUtils.isEmpty(et5.getText().toString().trim()))
+                !TextUtils.isEmpty(et4.getText().toString().trim()))
         {
             Mosque mosque = new Mosque(name,lang,lat,phone);
             MosqueAdmin mosqueAdmin = new MosqueAdmin(phone,phone);
             databaseMoque.child(phone).setValue(mosque);
             databaseMoqueAdmin.child(phone).setValue(mosqueAdmin);
+            PrayerTimmings prayerTimmings =new PrayerTimmings();
+            prayerTimmings.setPhoneNumber(mosque.getPhone());
+            MosquenTimming mosquenTimming = new MosquenTimming(mosque,prayerTimmings);
+            databaseMoquenTimming.child(phone).setValue(mosquenTimming);
             Toast.makeText(this,"Mosque added",Toast.LENGTH_LONG).show();
         }
         else {
@@ -74,9 +79,9 @@ public class AddMosqueActivity extends AppCompatActivity {
             if(TextUtils.isEmpty(s2)){
                 et1.setError("Enter Latitude");
             }
-            if(TextUtils.isEmpty(et5.getText().toString().trim()))
+            if(TextUtils.isEmpty(et4.getText().toString().trim()))
             {
-                et5.setError("Enter phone#");
+                et4.setError("Enter phone#");
             }
         }
     }
