@@ -12,7 +12,6 @@
         android:layout_height="69dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="38dp"
         android:text="Welcome to App Admin Pannal"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -34,16 +33,36 @@
         android:id="@+id/removemosquebutton"
         android:layout_width="261dp"
         android:layout_height="44dp"
-        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="206dp"
         android:text="Remove Mosque" />
 
     <Button
-        android:id="@+id/mosqueadminbutton"
+        android:id="@+id/islamicshop"
         android:layout_width="258dp"
-        android:layout_height="50dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="131dp"
-        android:text="Create Mosque Admin" />
+        android:layout_marginBottom="195dp"
+        android:text="IslamicShop" />
+
+    <Button
+        android:id="@+id/all_products"
+        android:layout_width="259dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="135dp"
+        android:text="All Products" />
+
+    <Button
+        android:id="@+id/view_order"
+        android:layout_width="260dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/addmosquebutton"
+        android:layout_marginTop="82dp"
+        android:text="View Order" />
 
 </RelativeLayout>

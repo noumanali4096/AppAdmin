@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "677011367069-41r10t86ua36a7fpui5lngn0eu142s79.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.nouman.appadmin",
+            "certificate_hash": "cbb9ddc93b500f751c22c4ff607b14c1e28f60a8"
+          }
+        },
+        {
           "client_id": "677011367069-d7aq2l3ssg3dddfd26r7c6h7vl1v762j.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -64,6 +72,66 @@
           "android_info": {
             "package_name": "com.example.nouman.azzan",
             "certificate_hash": "c1c23622bc777fc916da7ea761bac5f6b08408e2"
+          }
+        },
+        {
+          "client_id": "677011367069-v5eal7a2q1rbj4qju0p8bcsgg66v0a85.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.nouman.azzan",
+            "certificate_hash": "cbb9ddc93b500f751c22c4ff607b14c1e28f60a8"
+          }
+        },
+        {
+          "client_id": "677011367069-d7aq2l3ssg3dddfd26r7c6h7vl1v762j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBWyIlzGg_xrZpp-TncC4Lp3eAnCOKzJY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "677011367069-d7aq2l3ssg3dddfd26r7c6h7vl1v762j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:677011367069:android:163749f9bd2f44c5",
+        "android_client_info": {
+          "package_name": "com.example.nouman.mosqueadmin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "677011367069-3ispmvhkccr2lif1vsma18v3qt1i618k.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.nouman.mosqueadmin",
+            "certificate_hash": "c1c23622bc777fc916da7ea761bac5f6b08408e2"
+          }
+        },
+        {
+          "client_id": "677011367069-r7ehtjlom4tromno23mro2g7h4lmviv7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.nouman.mosqueadmin",
+            "certificate_hash": "cbb9ddc93b500f751c22c4ff607b14c1e28f60a8"
           }
         },
         {
